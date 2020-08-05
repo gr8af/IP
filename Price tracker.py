@@ -16,7 +16,9 @@ def check_price():
     price = int(details_relevant[9:12])
     if(price < 197):
         send_mail()
-    print(price)
+    i = 0
+    print(i)
+    i += 1
 
 def send_mail():
     server = smtplib.SMTP("smtp.gmail.com",587)
