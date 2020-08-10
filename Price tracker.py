@@ -5,7 +5,7 @@ import time
 
 URL = 'https://www.pianote.com/'
 
-headers = {"Uesr-Agent":'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36 Edg/84.0.522.52'}
+headers = {"User-Agent":'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36 Edg/84.0.522.52'}
 
 def check_price():
     
@@ -16,9 +16,6 @@ def check_price():
     price = int(details_relevant[9:12])
     if(price < 197):
         send_mail()
-    i = 0
-    print(i)
-    i += 1
 
 def send_mail():
     server = smtplib.SMTP("smtp.gmail.com",587)
@@ -41,4 +38,4 @@ def send_mail():
 
 while(True):
     check_price()
-    time.sleep(3600)
+    time.sleep(60)
